@@ -1,7 +1,7 @@
 <x-login-layout>
 
 <div class="top-container">
-  <img src="images/icon1.png">
+  <img src="/images/{{ Auth::user()->icon_image }}">
   {{ Form::open(['url' => '/posts/create']) }}
   <div>
     {{ Form::textarea('post', null, ['rows' => 4, 'placeholder' => '投稿内容を入力してください。']) }}

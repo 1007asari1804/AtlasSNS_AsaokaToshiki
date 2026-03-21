@@ -3,7 +3,7 @@
             <div id="profile">
                 <p>{{ Auth::user()->username }}さん</p>
                 <span class="accordion-button"></span>
-                <img src="images/icon1.png">
+                <img src="/images/{{ Auth::user()->icon_image }}">
                 <div class="accordion-menu">
                     <ul class="accordion-content">
                         <li class="accordion home"><a href="/top">ホーム</a></li>
