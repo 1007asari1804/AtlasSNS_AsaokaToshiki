@@ -34,10 +34,15 @@ class User extends Authenticatable
     ];
 
     public function following() {
-        return $this->belongsToMany(User::class,'follow','following_id','followed_id');
+        return $this->belongsToMany(User::class,'follows','following_id','followed_id');
     }
 
     public function followed() {
-        return $this->belongsToMany(User::class,'follow','followed_id','following_id');
+        return $this->belongsToMany(User::class,'follows','followed_id','following_id');
+    }
+
+    public function isFollowing($userId)
+    {
+        return $this->following()->where('followed_id', $userId)->exists();
     }
 }

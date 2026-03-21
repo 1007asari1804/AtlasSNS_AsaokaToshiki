@@ -36,9 +36,14 @@ Route::middleware('auth')->group(function(){
   Route::get('/follow-list', [FollowsController::class, 'followList']);
   Route::get('/follower-list', [FollowsController::class, 'followerList']);
 
-  Route::post('/posts/create', [PostsController::class, 'postCreate']);
+  Route::get('/posts/create', [PostsController::class, 'postCreate']);
 
   Route::post('/posts/{id}/update', [PostsController::class, 'update']);
 
   Route::get('/posts/{id}/delete', [PostsController::class, 'delete']);
+
+  Route::post('/follow/{user}', [FollowsController::class, 'store'])->name('follow');
+  Route::delete('/unfollow/{user}', [FollowsController::class, 'destroy'])->name('unfollow');
 });
+
+Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');

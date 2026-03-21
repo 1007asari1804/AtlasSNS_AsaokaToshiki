@@ -1,7 +1,7 @@
         <div id="head">
             <h1><a class="top-page" href="/top"><img src="images/atlas.png"></a></h1>
             <div id="profile">
-                <p>{{ session('username') }}さん</p>
+                <p>{{ Auth::user()->username }}さん</p>
                 <span class="accordion-button"></span>
                 <img src="images/icon1.png">
                 <div class="accordion-menu">

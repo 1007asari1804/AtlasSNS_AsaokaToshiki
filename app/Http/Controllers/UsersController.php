@@ -15,6 +15,6 @@ class UsersController extends Controller
         }else{
             $users = User::all();
         }
-        return view('users.search', compact('users'));
+        return view('users.search', compact('users', 'keyword'));
     }
 }

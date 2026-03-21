@@ -9,7 +9,6 @@
     <span>{{ $message }}</span>
     @enderror
   </div>
-  <!-- <input type="text" name="post" placeholder="投稿内容を入力してください。"> -->
   <button class="post-button" type='submit'><img src="{{ asset("images/post.png") }}"></button>
   {{ Form::close() }}
 </div>
