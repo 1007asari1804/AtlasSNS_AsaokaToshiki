@@ -19,6 +19,9 @@ class ProfileController extends Controller
     }
 
     public function show(User $user){
-    return view('profiles.show', compact('user'));
+        $posts = Post::where('user_id', $user->id)
+        ->latest()
+        ->get();
+        return view('profiles.show', compact('user', 'posts'));
 }
 }
