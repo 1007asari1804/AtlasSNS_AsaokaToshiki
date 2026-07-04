@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function(){
 
   Route::get('/profile', [ProfileController::class, 'profile']);
 
+  Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
   // Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile.other');
 
   Route::get('/search', [UsersController::class, 'search']);
